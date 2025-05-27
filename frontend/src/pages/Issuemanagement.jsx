@@ -12,22 +12,41 @@ import {
   TableRow,
 } from "../components/ui/table";
 import { Filter } from "lucide-react";
+import { issueAPI } from '../services/api'
+import { format } from 'date-fns';
 
 const Issuemanagement = () => {
-  const mockIssues = [
-    { id: 1, title: "Course Registration Issue", category: "Registration", status: "Open", date: "2024-01-15" },
-    { id: 2, title: "Missing Grades", category: "Academic", status: "In Progress", date: "2024-01-14" },
-    { id: 3, title: "Signin Problem", category: "Technical", status: "Resolved", date: "2024-01-13" },
-  ];
+  // const mockIssues = [
+  //   { id: 1, title: "Course Registration Issue", category: "Registration", status: "Open", date: "2024-01-15" },
+  //   { id: 2, title: "Missing Grades", category: "Academic", status: "In Progress", date: "2024-01-14" },
+  //   { id: 3, title: "Signin Problem", category: "Technical", status: "Resolved", date: "2024-01-13" },
+  // ];
+
+  const [fetchError, setFetchError] = React.useState(null);
+  const [issues, setIssues] = React.useState([]);
+  const getIssues = async () => {
+      try {
+          setIssues(await issueAPI.getIssues())
+      } catch (error) {
+          console.error({error});
+          setFetchError("Failed to fetch registrars.");
+      }
+  }
+  React.useEffect(() => {
+    getIssues();
+  }, []);
+  console.log({issues})
 
   const getStatusStyle = (status) => {
     switch(status.toLowerCase()) {
-      case 'open':
+      case 'pending':
         return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      case 'in progress':
+      case 'in_progress':
         return 'bg-blue-100 text-blue-800 border-blue-200';
       case 'resolved':
         return 'bg-green-100 text-green-800 border-green-200';
+      case 'assigned':
+        return 'bg-purple-100 text-green-800 border-purple-200';
       default:
         return 'bg-gray-100 text-gray-800 border-gray-200';
     }
@@ -73,7 +92,7 @@ const Issuemanagement = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {mockIssues.map((issue) => (
+                  {issues.length > 0 && issues.map((issue) => (
                     <TableRow key={issue.id} className="hover:bg-gray-50 border-b border-gray-200">
                       <td className="py-4 px-6">
                         <div className="font-medium text-gray-900">{issue.title}</div>
@@ -86,9 +105,15 @@ const Issuemanagement = () => {
                           {issue.status}
                         </span>
                       </td>
-                      <td className="py-4 px-6 text-right text-gray-600">{issue.date}</td>
+                      <td className="py-4 px-6 text-right text-gray-600">{format(new Date(issue.created_at), "yyyy-MM-d")}</td>
                     </TableRow>
-                  ))}
+                  )) || (
+                    <TableRow>
+                      <td colSpan="4" className="text-center py-4 text-gray-500">
+                        {fetchError ? fetchError : "No issues found."}
+                      </td>
+                    </TableRow>
+                  )}
                 </TableBody>
               </Table>
             </div>
