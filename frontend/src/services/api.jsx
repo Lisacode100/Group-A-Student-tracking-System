@@ -299,7 +299,7 @@
 import axios from 'axios';
 import { getToken, clearToken, storeToken } from '../pages/auth'; // Make sure this path is correct
 
-let API_BASE_URL;
+export let API_BASE_URL;
 
 if (import.meta.env.DEV){
   API_BASE_URL = 'http://127.0.0.1:8000/api/';

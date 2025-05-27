@@ -5,11 +5,13 @@ import add from '../assets/add.png';
 import emptybox from '../assets/emptybox.png';
 import { IssuesContext } from '../context/IssueContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { format } from 'date-fns';
 
 const DashboardContent = () => {
     const { issues } = useContext(IssuesContext);
     const [filterStatus, setFilterStatus] = useState('all');
     const navigate = useNavigate();
+    console.log({issues})
     
 
     const handleFilterChange = (event) => {
@@ -82,7 +84,7 @@ const DashboardContent = () => {
                                 <div className='table-row-item'>{issue.title}</div>
                                 <div className='table-row-item'>{issue.status}</div>
                                 <div className='table-row-item'>{issue.category}</div>
-                                <div className='table-row-item'>{issue.date}</div>
+                                <div className='table-row-item'>{format(new Date(issue.created_at), "yyyy-MM-d")}</div>
                             </div>
                         ))
                     ) : (

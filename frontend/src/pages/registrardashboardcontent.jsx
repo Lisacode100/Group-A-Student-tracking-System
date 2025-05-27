@@ -24,7 +24,7 @@ const RegistrarDashboardContent = () => {
 
             const assignedCount = storedIssues.length;
             const pendingCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'pending').length;
-            const inProgressCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'in-progress').length;
+            const inProgressCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'in_progress').length;
             const resolvedCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'resolved').length;   
 
             setAssignedIssues(assignedCount);

@@ -4,7 +4,8 @@ import logo from '../assets/logo.png';
 import mail from '../assets/mail.png';
 import padlock from '../assets/padlock.png';
 import { useNavigate, Link } from 'react-router-dom';
-import { authAPI } from '../services/api'; // Update this path to where your api.jsx file is located
+import { authAPI, issueAPI } from '../services/api'; // Update this path to where your api.jsx file is located
+import { IssuesContext } from '../context/IssueContext'; // Update this path to where your IssueContext.jsx file is located
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -48,7 +49,7 @@ const SignIn = () => {
         try {
             // Call the signin API endpoint
             const response = await authAPI.signin(formData.email, formData.password);
-            
+
             // Get user role from the response or from another API call if needed
             const userRole = response.role || 'student'; // Default to student if no role provided
             

@@ -308,10 +308,10 @@ class DepartmentView(generics.ListCreateAPIView):
         serializer.save()
     
 
-class IssueView(viewsets.ModelViewSet):
-    queryset = Issue.objects.all()
-    serializer_class = IssueSerializer
-    permission_classes = [IsAuthenticated]
+# class IssueView(viewsets.ModelViewSet):
+#     queryset = Issue.objects.all()
+#     serializer_class = IssueSerializer
+#     permission_classes = [IsAuthenticated]
     
 
 class CourseView(generics.ListCreateAPIView):
@@ -340,6 +340,8 @@ class IssueView(generics.ListCreateAPIView, generics.RetrieveUpdateDestroyAPIVie
     def get_queryset(self):
         if self.request.user.role == 'student':
             return Issue.objects.filter(student=self.request.user, course__students=self.request.user)
+        elif self.request.user.role == 'lecturer':
+            return Issue.objects.filter(assigned_to=self.request.user)
         return Issue.objects.all()
     
     def perform_create(self, serializer):

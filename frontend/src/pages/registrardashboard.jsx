@@ -4,12 +4,14 @@ import './studentdashboard.css';
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import { toast } from 'react-toastify';
+import { IssuesContext } from '../context/IssueContext'; // Update this path to where your IssueContext.jsx file is located
 
 const RegistrarDashboard = () => {
     const [allIssues, setAllIssues] = useState([]);
     const [lecturers, setLecturers] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const { updateContextIssues } = React.useContext(IssuesContext);
 
     // Set user role in localStorage
     useEffect(() => {
@@ -61,6 +63,10 @@ const RegistrarDashboard = () => {
 
     useEffect(() => {
         fetchData();
+    }, []);
+    
+    React.useEffect(() => {
+        updateContextIssues();
     }, []);
 
     return (

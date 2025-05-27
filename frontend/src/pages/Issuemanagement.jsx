@@ -35,7 +35,6 @@ const Issuemanagement = () => {
   React.useEffect(() => {
     getIssues();
   }, []);
-  console.log({issues})
 
   const getStatusStyle = (status) => {
     switch(status.toLowerCase()) {
