@@ -104,7 +104,7 @@
     "pk": 6,
     "fields": {
       "password": "pbkdf2_sha256$1000000$smKSQx8RtnPuKYvB7LQtny$CrG+4LoVNxL58B82WjyxSIIQ7/v/fQuNGOjlKrT26EA=",
-      "last_login": null,
+      "last_login": "2025-05-27T17:09:39.400Z",
       "is_superuser": true,
       "is_staff": true,
       "is_active": true,
@@ -283,7 +283,7 @@
     "model": "api.issue",
     "pk": 2,
     "fields": {
-      "student": 2,
+      "student": 6,
       "registrar": 3,
       "category": "missingmarks",
       "semester": "1",
@@ -349,7 +349,7 @@
     "model": "api.issue",
     "pk": 5,
     "fields": {
-      "student": 2,
+      "student": 6,
       "registrar": 3,
       "category": "appeal",
       "semester": "2",
@@ -393,7 +393,7 @@
     "model": "api.issue",
     "pk": 7,
     "fields": {
-      "student": 2,
+      "student": 1,
       "registrar": 3,
       "category": "correction",
       "semester": "2",
@@ -415,7 +415,7 @@
     "model": "api.issue",
     "pk": 8,
     "fields": {
-      "student": 2,
+      "student": 6,
       "registrar": 3,
       "category": "appeal",
       "semester": "1",
@@ -437,7 +437,7 @@
     "model": "api.issue",
     "pk": 9,
     "fields": {
-      "student": 1,
+      "student": 6,
       "registrar": 3,
       "category": "appeal",
       "semester": "1",
@@ -503,7 +503,7 @@
     "model": "api.issue",
     "pk": 12,
     "fields": {
-      "student": 1,
+      "student": 6,
       "registrar": 3,
       "category": "missingmarks",
       "semester": "1",
@@ -512,7 +512,7 @@
       "description": "some description",
       "attachments": "",
       "status": "pending",
-      "created_at": "2025-05-26T18:39:04.453Z",
+      "created_at": "2025-04-16T18:39:04.453Z",
       "updated_at": "2025-05-26T18:39:04.453Z",
       "assigned_to": null,
       "assigned_by": null,
