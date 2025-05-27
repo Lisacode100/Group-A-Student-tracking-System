@@ -21,7 +21,8 @@ class LecturerSerializer(UserSerializer):
         # fields = UserSerializer.Meta.fields + [
         #     'staff_id', 'department', 'courses', 'office_location', 'password'
         # ]
-        exclude = ["password"]
+        fields = '__all__'
+        # exclude = ["password"]
 
         extra_kwargs = {
             'password': {'write_only': True},
