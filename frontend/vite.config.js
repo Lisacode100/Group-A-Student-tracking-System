@@ -2,10 +2,15 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteTsconfigPaths from 'vite-tsconfig-paths'
 import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-    base: '',
-    plugins: [react(), viteTsconfigPaths()],
+    // base: '',
+    plugins: [
+      tailwindcss(),
+      // react(),
+      viteTsconfigPaths()
+    ],
     // resolve: {
     //     alias: {
     //         '@': path.resolve(__dirname, './src'),
@@ -13,15 +18,15 @@ export default defineConfig({
     // },
     server: {    
         open: true,
-        port: 3000, 
+        // port: 3000, 
         hmr: {
           protocol: 'ws',
           host: 'localhost',
         },
     },
-    esbuild: {
-      loader: {
-        '.js': 'jsx',
-      },
-    },
+    // esbuild: {
+    //   loader: {
+    //     '.js': 'jsx',
+    //   },
+    // },
 })

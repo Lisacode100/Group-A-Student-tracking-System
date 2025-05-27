@@ -1,0 +1,551 @@
+[
+  {
+    "model": "api.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$NoiiutcZ7NZQ3xpxV7Ms0G$DTFhmup36mwzpBP9FWq819frVp17rxQ6Z1479g2Aayo=",
+      "last_login": "2025-05-14T14:52:58.825Z",
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-05-14T14:48:08.973Z",
+      "email": "eageno075@gmail.com",
+      "fullname": "Eliza",
+      "otp": null,
+      "is_verified": false,
+      "otp_created_at": null,
+      "first_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "profile_picture": "",
+      "termsAccepted": false,
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.customuser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$VjqbNkON3xG1WvjUGX7rJ1$rF2hF4+ZMLARcTyPIELaaAgt9pE1HQ8jTPVYrrvaPnU=",
+      "last_login": null,
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-19T11:40:41.080Z",
+      "email": "eageno555@gmail.com",
+      "fullname": "Ageno Elizabeth",
+      "otp": null,
+      "is_verified": true,
+      "otp_created_at": null,
+      "first_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "profile_picture": "",
+      "termsAccepted": false,
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.customuser",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$8MLlFR0T3UvCpqVINZst3u$XKHn3VYg+dQJx3w2AfKGcpEF7MF2FYdsVspdcr0hzhw=",
+      "last_login": null,
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-19T11:51:03.095Z",
+      "email": "cs9606644@gmail.com",
+      "fullname": "JANE DOE",
+      "otp": null,
+      "is_verified": true,
+      "otp_created_at": null,
+      "first_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "profile_picture": "",
+      "termsAccepted": false,
+      "role": "registrar",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.customuser",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$QoKMEOAU2x9QHU5H455Gp0$i0jEYIEVKph5R2eceQTtXjPLxgwSBQTU5tJuZZNRga4=",
+      "last_login": null,
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-05-27T14:44:09.967Z",
+      "email": "admin@e.com",
+      "fullname": "Ad Min",
+      "otp": null,
+      "is_verified": false,
+      "otp_created_at": null,
+      "first_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "profile_picture": "",
+      "termsAccepted": false,
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.customuser",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$smKSQx8RtnPuKYvB7LQtny$CrG+4LoVNxL58B82WjyxSIIQ7/v/fQuNGOjlKrT26EA=",
+      "last_login": null,
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-05-27T16:15:23.314Z",
+      "email": "alvin69david@gmail.com",
+      "fullname": "WALUUBE ALVIN",
+      "otp": null,
+      "is_verified": false,
+      "otp_created_at": null,
+      "first_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "profile_picture": "",
+      "termsAccepted": false,
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.customuser",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$O9blKl158m4E4r4qiO3GaQ$6Co/ovNMCklgEa3nMRpEV8LYthgEwh4HZ9B3pKsfAkY=",
+      "last_login": null,
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-05-27T16:18:32.355Z",
+      "email": "waluube69alvin@gmail.com",
+      "fullname": "Alvin John Waluube",
+      "otp": null,
+      "is_verified": false,
+      "otp_created_at": null,
+      "first_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "profile_picture": "",
+      "termsAccepted": false,
+      "role": "lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "api.department",
+    "pk": 1,
+    "fields": {
+      "code": "123",
+      "name": "Department Name",
+      "description": "Department description"
+    }
+  },
+  {
+    "model": "api.department",
+    "pk": 2,
+    "fields": { "code": "csc 2104", "name": "Networks", "description": "" }
+  },
+  {
+    "model": "api.department",
+    "pk": 3,
+    "fields": { "code": "csc 1004", "name": "Dicts", "description": "" }
+  },
+  {
+    "model": "api.department",
+    "pk": 4,
+    "fields": { "code": "csc 2304", "name": "math", "description": "" }
+  },
+  {
+    "model": "api.course",
+    "pk": 2,
+    "fields": {
+      "code": "12343",
+      "name": "Course One",
+      "department": 1,
+      "description": "Course description"
+    }
+  },
+  {
+    "model": "api.course",
+    "pk": 5,
+    "fields": {
+      "code": "4321",
+      "name": "Course 2",
+      "department": 1,
+      "description": "Course Two description"
+    }
+  },
+  {
+    "model": "api.lecturer",
+    "pk": 5,
+    "fields": {
+      "staff_id": "9e7ffba3-c383-4664-861f-70b10faadcb6",
+      "department": null,
+      "office_location": "COCIS",
+      "courses": []
+    }
+  },
+  {
+    "model": "api.lecturer",
+    "pk": 7,
+    "fields": {
+      "staff_id": "7a86205c-c31c-4858-8896-76af4f2282c1",
+      "department": null,
+      "office_location": "",
+      "courses": []
+    }
+  },
+  {
+    "model": "api.student",
+    "pk": 1,
+    "fields": {
+      "student_id": "09071f19-a55f-4103-96e5-f7e42b80e611",
+      "department": null,
+      "enrolled_courses": []
+    }
+  },
+  {
+    "model": "api.student",
+    "pk": 2,
+    "fields": {
+      "student_id": "2a1aec0a-2dcc-4ae3-8e82-9a4b030db0b2",
+      "department": null,
+      "enrolled_courses": []
+    }
+  },
+  {
+    "model": "api.student",
+    "pk": 3,
+    "fields": {
+      "student_id": "9e7ffba3-c383-4664-861f-70b10faadcb6",
+      "department": null,
+      "enrolled_courses": []
+    }
+  },
+  {
+    "model": "api.student",
+    "pk": 6,
+    "fields": {
+      "student_id": "c1c05323-5314-4532-8cfd-dfe685e5a8a1",
+      "department": null,
+      "enrolled_courses": []
+    }
+  },
+  {
+    "model": "api.registrar",
+    "pk": 3,
+    "fields": {
+      "staff_id": "1bfcc4b4-7d15-418a-8f94-8c8fbee130f9",
+      "office_number": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 1,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "appeal",
+      "semester": "1",
+      "course": null,
+      "title": "missing marks",
+      "description": "cannot see my marks for this paper",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-20T12:00:51.622Z",
+      "updated_at": "2025-05-20T09:00:51.734Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 2,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "missing marks",
+      "description": "cannot see my marks for this paper",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-20T12:01:30.382Z",
+      "updated_at": "2025-05-20T09:01:30.383Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 3,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "missing marks",
+      "description": "i appeal for a remark",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-20T12:11:18.245Z",
+      "updated_at": "2025-05-20T09:11:18.245Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 4,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "missing marks",
+      "description": "cannot see my marks for this paper",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-20T12:13:50.043Z",
+      "updated_at": "2025-05-20T09:13:50.043Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 5,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "appeal",
+      "semester": "2",
+      "course": null,
+      "title": "missing marks",
+      "description": "dfjjjfj",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-21T15:33:54.404Z",
+      "updated_at": "2025-05-21T12:33:54.998Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 6,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "missing marks",
+      "description": "fjf",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-21T15:36:21.284Z",
+      "updated_at": "2025-05-21T12:36:21.522Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 7,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "correction",
+      "semester": "2",
+      "course": null,
+      "title": "missing marks",
+      "description": "ff",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-21T15:40:36.297Z",
+      "updated_at": "2025-05-21T12:40:36.590Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 8,
+    "fields": {
+      "student": 2,
+      "registrar": 3,
+      "category": "appeal",
+      "semester": "1",
+      "course": null,
+      "title": "hhhhh",
+      "description": "jjjjj",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-21T16:03:35.030Z",
+      "updated_at": "2025-05-21T13:03:35.381Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 9,
+    "fields": {
+      "student": 1,
+      "registrar": 3,
+      "category": "appeal",
+      "semester": "1",
+      "course": null,
+      "title": "Some title",
+      "description": "Some Description",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-26T18:25:22.239Z",
+      "updated_at": "2025-05-26T18:25:22.246Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 10,
+    "fields": {
+      "student": 1,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "test issue",
+      "description": "some description",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-26T18:31:41.216Z",
+      "updated_at": "2025-05-26T18:31:41.216Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 11,
+    "fields": {
+      "student": 1,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "test issue",
+      "description": "some description",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-26T18:33:24.140Z",
+      "updated_at": "2025-05-26T18:33:24.140Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 12,
+    "fields": {
+      "student": 1,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "test issue",
+      "description": "some description",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-26T18:39:04.453Z",
+      "updated_at": "2025-05-26T18:39:04.453Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.issue",
+    "pk": 13,
+    "fields": {
+      "student": 1,
+      "registrar": 3,
+      "category": "missingmarks",
+      "semester": "1",
+      "course": null,
+      "title": "test issue",
+      "description": "some description",
+      "attachments": "",
+      "status": "pending",
+      "created_at": "2025-05-26T18:39:31.819Z",
+      "updated_at": "2025-05-26T18:39:31.819Z",
+      "assigned_to": null,
+      "assigned_by": null,
+      "assigned_at": null,
+      "resolved_by": null,
+      "resolved_at": null
+    }
+  },
+  {
+    "model": "api.college",
+    "pk": 2,
+    "fields": { "name": "COCIS", "registrar": 3 }
+  }
+]

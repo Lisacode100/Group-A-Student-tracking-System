@@ -344,6 +344,7 @@ class IssueView(generics.ListCreateAPIView, generics.RetrieveUpdateDestroyAPIVie
     
     def perform_create(self, serializer):
         if self.request.user.role == 'student':
+            # course = serializer.validated_data.get('course')
             course = serializer.validated_data.get('course')
             if course and self.request.user not in course.students.all():
                 raise PermissionDenied('You can only report issues for courses you are enrolled in.')
@@ -351,7 +352,8 @@ class IssueView(generics.ListCreateAPIView, generics.RetrieveUpdateDestroyAPIVie
             serializer.save()
         else:
             raise PermissionDenied('Only students can create issues.')
-        assigned_lecturer = course.lecturer
+        # assigned_lecturer = course.lecturer
+
 # Assign Issue View (Only accessible by registrars)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated, IsRegistrar])  # Only registrars can assign issues

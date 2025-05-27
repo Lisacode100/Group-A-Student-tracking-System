@@ -160,7 +160,8 @@ class Issue(models.Model):
     description = models.TextField( validators=[MaxLengthValidator(500)], null=True, blank=True)
     attachments = models.ImageField(upload_to='issue_attachments/', null=True, blank=True)
     status = models.CharField(max_length=20, choices=ISSUE_STATUS, default='open')
-    created_at = models.DateTimeField(default=datetime.datetime.now)
+    # created_at = models.DateTimeField(default=datetime.datetime.now)
+    created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
     assigned_to = models.ForeignKey(
         Lecturer, 

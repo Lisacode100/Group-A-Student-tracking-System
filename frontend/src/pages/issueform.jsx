@@ -18,6 +18,17 @@ const IssueForm = ({ setBadgeCount }) => {
         attachments: null,
         semester: '1',
     });
+    // const [formData, setFormData] = useState({
+    //     title: 'test issue',
+    //     description: 'some description',
+    //     category: 'missingmarks',
+    //     registrar: '',
+    //     // lecturer: '',
+    //     coursecode: 'code123',
+    //     // coursename: '',
+    //     attachments: null,
+    //     semester: '1',
+    // });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState(null);
@@ -146,7 +157,7 @@ const IssueForm = ({ setBadgeCount }) => {
         getColleges()
     }, [])
 
-    // console.log({registrars, colleges})
+    console.log({registrars, colleges})
     
     return (
         <div className='issue-form-container'>
