@@ -304,7 +304,7 @@ export let API_BASE_URL;
 if (import.meta.env.DEV){
   API_BASE_URL = 'http://127.0.0.1:8000/api/';
 } else {
-  API_BASE_URL = 'https://groupaaits.onrender.com/api/';
+  API_BASE_URL = 'https://groupaaits-fcc13149840c.herokuapp.com/api/';
 }
 // Create an axios instance with default config
 const api = axios.create({
