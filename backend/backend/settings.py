@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import environ
+import dj_database_url
 
 env = environ.Env(
     # set casting, default value
@@ -118,14 +119,33 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    'default': {
-        'ENGINE': env('DB_ENGINE', default='django.db.backends.postgresql'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST', default='localhost'),
-        'PORT': env('DB_PORT'),
-    },
+    # 'default': {
+    #     'ENGINE': env('DB_ENGINE', default='django.db.backends.postgresql'),
+    #     'NAME': env('DB_NAME'),
+    #     'USER': env('DB_USER'),
+    #     'PASSWORD': env('DB_PASSWORD'),
+    #     'HOST': env('DB_HOST', default='localhost'),
+    #     'PORT': env('DB_PORT'),
+    # },
+    # 'default': dj_database_url.config(
+    #     default=env('DATABASE_URL', default='sqlite:///db.sqlite3'),
+    #     conn_max_age=600,  # Adjust the connection pool size as needed
+    #     ssl_require=env('DATABASE_SSL_REQUIRE', default=False)
+    # )
+    'default': dj_database_url.parse(env('DATABASE_URL', default='sqlite:///db.sqlite3')),
+    
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': env('DB_NAME'),
+    #     'USER': env('DB_USER'),
+    #     'PASSWORD': env('DB_PASSWORD'),
+    #     'HOST': env('DB_HOST'),
+    #     'PORT': env('DB_PORT', default=5432),
+    #     'OPTIONS': {
+    #         'sslmode': 'require',
+    #     },
+    #     'DISABLE_SERVER_SIDE_CURSORS': True,
+    # }
 }
 
 
