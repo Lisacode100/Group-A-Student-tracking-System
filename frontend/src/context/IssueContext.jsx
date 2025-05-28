@@ -150,7 +150,7 @@ export const IssuesProvider = ({ children }) => {
     const [registrarBadgeCount, setRegistrarBadgeCount] = useState(0); 
 
     const updateContextIssues = async (newValue) => {
-        console.log("IssuesContext useEffect called");
+        // console.log("IssuesContext useEffect called");
         try {
             if (newValue) {
                 setIssues(newValue)
@@ -161,6 +161,7 @@ export const IssuesProvider = ({ children }) => {
                 localStorage.setItem('issues', JSON.stringify(fetchedIssues));
             }
         } catch (error) {
+            // setIssues([]); // TODO: Quick fix to avoid issues being undefined
             console.error({error});
         }
         // setContextValue(prevValues => ({...prevValues, ...newValues}));

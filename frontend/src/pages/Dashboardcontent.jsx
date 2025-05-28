@@ -11,7 +11,7 @@ const DashboardContent = () => {
     const { issues } = useContext(IssuesContext);
     const [filterStatus, setFilterStatus] = useState('all');
     const navigate = useNavigate();
-    console.log({issues})
+    // console.log({issues})
     
 
     const handleFilterChange = (event) => {

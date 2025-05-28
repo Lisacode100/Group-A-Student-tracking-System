@@ -4,6 +4,7 @@ import './registrardashboardcontent.css';
 import filter from '../assets/filter.png';
 import emptybox from '../assets/emptybox.png';
 import search from '../assets/search.png';
+import { format } from 'date-fns';
 import { IssuesContext } from "../context/IssueContext";
 
 const RegistrarDashboardContent = () => {
@@ -13,7 +14,7 @@ const RegistrarDashboardContent = () => {
     const [pendingIssues, setPendingIssues] = useState(0);
     const [inProgressIssues, setInProgressIssues] = useState(0);
     const [resolvedIssues, setResolvedIssues] = useState(0);
-
+    const { issues: contextIssues } = React.useContext(IssuesContext);
 
     const navigate = useNavigate();
 
@@ -41,7 +42,8 @@ const RegistrarDashboardContent = () => {
         return () => {
             window.removeEventListener('storage', loadIssues);
         };
-    }, []);
+    }, [ contextIssues ]);
+    // console.log({llrre : localStorage.getItem('issues')});
 
     const handleOpenIssuesClick = () => {
         setRegistrarBadgeCount(0); 
@@ -88,7 +90,7 @@ const RegistrarDashboardContent = () => {
                         <option value='pending'>Pending</option>
                         <option value='in-progress'>In-progress</option>
                         <option value='resolved'>Resolved</option>
-                        <img src={filter} alt='filter' className='issuefiltericon' /> 
+                        {/* <img src={filter} alt='filter' className='issuefiltericon' />  */}
                     </select>
                 </div>
                 <div className='myissuessearchcontainer'>
@@ -105,10 +107,21 @@ const RegistrarDashboardContent = () => {
                     <div className='tableheader-item'>Category</div>
                     <div className='tableheader-item'>Date</div>
                 </div>
-                <div className="registrar-issues-container">
-                    <img src={emptybox} alt="emptybox" className="emptyboxicon" />
-                    <p>There are no recent issues worked upon.<br/>Kindly click <b>Open Issues</b> to get started.</p>
-                </div>
+                {issues.length > 0 ? (
+                    issues.map((issue, index) => (
+                        <div key={index} className='table-row'>
+                            <div className='table-row-item'>{issue.title}</div>
+                            <div className='table-row-item'>{issue.status}</div>
+                            <div className='table-row-item'>{issue.category}</div>
+                            <div className='table-row-item'>{format(new Date(issue.created_at), "yyyy-MM-d")}</div>
+                        </div>
+                    ))
+                ) : (
+                    <div className="lecturer-issues-container">
+                        <img src={emptybox} alt="emptybox" className="emptyboxicon" />
+                        <p>There are no recent issues worked upon.<br />Kindly click <b>Open Issues</b> to get started.</p>
+                    </div>
+                )}
                 </div>
             </div>
         </div>

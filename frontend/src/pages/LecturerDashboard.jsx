@@ -8,6 +8,7 @@ import { IssuesContext } from '../context/IssueContext'; // Update this path to 
 const LecturerDashboard = () => {
     const userRole = localStorage.getItem('userRole');
     const { updateContextIssues } = React.useContext(IssuesContext);
+    console.log({li: localStorage.getItem('issues')});
         
     React.useEffect(() => {
         updateContextIssues();

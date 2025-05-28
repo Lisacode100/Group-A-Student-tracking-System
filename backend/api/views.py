@@ -339,7 +339,8 @@ class IssueView(generics.ListCreateAPIView, generics.RetrieveUpdateDestroyAPIVie
     
     def get_queryset(self):
         if self.request.user.role == 'student':
-            return Issue.objects.filter(student=self.request.user, course__students=self.request.user)
+            # return Issue.objects.filter(student=self.request.user, course__students=self.request.user)
+            return Issue.objects.filter(student=self.request.user)
         elif self.request.user.role == 'lecturer':
             return Issue.objects.filter(assigned_to=self.request.user)
         return Issue.objects.all()

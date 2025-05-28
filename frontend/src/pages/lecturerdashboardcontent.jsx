@@ -5,6 +5,8 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import search from '../assets/search.png';
 import emptybox from '../assets/emptybox.png';
+import { format } from 'date-fns';
+import { IssuesContext } from '../context/IssueContext'; // Update this path to where your IssueContext.jsx file is located
 
 const LecturerDashboardContent = () => {
     const [issues, setIssues] = useState([]);
@@ -14,17 +16,19 @@ const LecturerDashboardContent = () => {
     const [resolvedIssues, setResolvedIssues] = useState(0);
     const [filterStatus, setFilterStatus] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
+    const { issues: contextIssues } = React.useContext(IssuesContext);
 
     const navigate = useNavigate();
 
     useEffect(() => {
+        console.log({llli : localStorage.getItem('issues')});
         const loadIssues = () => {
             const storedIssues = JSON.parse(localStorage.getItem('issues')) || [];
             setIssues(storedIssues);
 
             const assignedCount = storedIssues.length;
             const pendingCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'pending').length;
-            const inProgressCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'in-progress').length;
+            const inProgressCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'in_progress').length;
             const resolvedCount = storedIssues.filter(issue => issue.status.toLowerCase() === 'resolved').length;
 
             setAssignedIssues(assignedCount);
@@ -40,7 +44,7 @@ const LecturerDashboardContent = () => {
         return () => {
             window.removeEventListener('storage', loadIssues);
         };
-    }, []);
+    }, [ contextIssues ]);
 
     const handleFilterChange = (e) => {
         setFilterStatus(e.target.value);
@@ -140,7 +144,7 @@ const LecturerDashboardContent = () => {
                                     <div className='table-row-item'>{issue.title}</div>
                                     <div className='table-row-item'>{issue.status}</div>
                                     <div className='table-row-item'>{issue.category}</div>
-                                    <div className='table-row-item'>{issue.date}</div>
+                                    <div className='table-row-item'>{format(new Date(issue.created_at), "yyyy-MM-d")}</div>
                                 </div>
                             ))
                         ) : (
